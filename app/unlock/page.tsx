@@ -25,7 +25,7 @@ export default function UnlockPage({ searchParams }: UnlockPageProps) {
     if (slides.length <= 1) return;
     const id = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
-    }, 4500);
+    }, 7000);
     return () => clearInterval(id);
   }, [slides.length]);
 
@@ -37,7 +37,7 @@ export default function UnlockPage({ searchParams }: UnlockPageProps) {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-bg text-ink">
+    <div className="relative min-h-svh bg-bg text-ink">
       <div
         className={`fixed inset-0 z-20 cursor-pointer overflow-hidden transition-transform duration-700 ${
           showForm ? "-translate-y-full" : "translate-y-0"
@@ -64,14 +64,16 @@ export default function UnlockPage({ searchParams }: UnlockPageProps) {
           </div>
         ))}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/65 via-black/25 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 flex h-1/3 items-center justify-center text-center">
-          <span className="text-[120px] font-semibold uppercase tracking-[0.4em] text-white">COMING SOON</span>
+        <div className="pointer-events-none absolute inset-x-0 top-0 flex h-1/2 items-center justify-center px-4 text-center sm:h-1/3">
+          <span className="text-[12vw] font-semibold uppercase tracking-[0.15em] text-white sm:text-[120px]">
+            COMING SOON
+          </span>
         </div>
       </div>
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-20">
+      <div className="relative z-10 flex min-h-svh items-center justify-center px-4 py-12 sm:px-6 sm:py-20">
         <div
-          className={`max-w-md flex-1 rounded-3xl border border-border bg-surface/95 p-10 shadow-card transition-opacity duration-700 ${
+          className={`w-full max-w-md flex-1 rounded-3xl border border-border bg-surface/95 p-8 shadow-card transition-opacity duration-700 ${
             showForm ? "opacity-100" : "opacity-0"
           }`}
         >
