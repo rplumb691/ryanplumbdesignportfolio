@@ -12,6 +12,7 @@ const navItems = [
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [isUnlock, setIsUnlock] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 32);
@@ -19,6 +20,17 @@ export function Header() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsUnlock(document.body.classList.contains("unlock-mode"));
+    });
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    setIsUnlock(document.body.classList.contains("unlock-mode"));
+    return () => observer.disconnect();
+  }, []);
+
+  if (isUnlock) return null;
 
   const headerClasses = cn(
     "sticky top-0 z-40 border-b backdrop-blur-xl transition-colors duration-300",
