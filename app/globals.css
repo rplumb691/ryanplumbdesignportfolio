@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 224 224 224;
+  --surface: 255 255 255;
+  --ink: 19 18 0;
+  --accent: 125 83 222;
+  --accent-2: 37 95 133;
+  --signal: 204 41 54;
+  --muted: 70 67 54;
+  --muted-2: 120 114 100;
+  --grid-color: rgb(var(--ink) / 0.12);
+  --dot-color: rgb(var(--ink) / 0.18);
+  --paper-dot: rgb(var(--ink) / 0.08);
+  --hero-glow: radial-gradient(circle at 15% 0%, rgb(var(--accent) / 0.15), transparent 42%),
+    radial-gradient(circle at 70% 0%, rgb(var(--accent-2) / 0.12), transparent 45%),
+    radial-gradient(circle at 80% 85%, rgb(var(--accent) / 0.1), transparent 35%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-archivo), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--ink));
+  min-height: 100vh;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+.gradient-sheen {
+  position: relative;
+}
+
+.gradient-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--gradient, theme("backgroundImage.hero-wash"));
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.grid-overlay {
+  position: relative;
+}
+
+.grid-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      0deg,
+      transparent calc(100% - 1px),
+      var(--grid-color) calc(100% - 1px)
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(100% - 1px),
+      var(--grid-color) calc(100% - 1px)
+    );
+  background-size: 120px 120px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.paper-dots {
+  position: relative;
+  background-color: rgb(var(--bg));
+  background-image: linear-gradient(135deg, rgb(var(--accent) / 0.08), transparent 55%),
+    linear-gradient(315deg, rgb(var(--accent-2) / 0.06), transparent 50%);
+  overflow: hidden;
+}
+
+.paper-dots::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgb(var(--surface) / 0.6), transparent 45%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.halftone::after {
+  content: "";
+  position: absolute;
+  inset: 15% 20% auto auto;
+  width: clamp(120px, 15vw, 220px);
+  height: clamp(120px, 15vw, 220px);
+  background-image: radial-gradient(var(--dot-color) 20%, transparent 21%);
+  background-size: 8px 8px;
+  opacity: 0.4;
+  border-radius: 999px;
+  filter: blur(0.5px);
+  pointer-events: none;
+}
+
+.halftone-corner::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 190px;
+  height: 190px;
+  background-image: radial-gradient(var(--dot-color) 20%, transparent 21%);
+  background-size: 7px 7px;
+  opacity: 0.26;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.hero-atmosphere {
+  position: relative;
+}
+
+.hero-atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: -60px -40px auto;
+  height: 500px;
+  background-image: var(--hero-glow);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.script-accent {
+  font-family: var(--font-clash-display), sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.float-in {
+  animation: floatIn 0.8s ease-out both;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 80px;
+  }
+}

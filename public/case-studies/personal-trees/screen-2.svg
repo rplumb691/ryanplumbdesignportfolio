@@ -1,0 +1,16 @@
+<svg width='1200' height='900' viewBox='0 0 1200 900' xmlns='http://www.w3.org/2000/svg'>
+<defs>
+<linearGradient id='grad-personal-trees-screen-2' x1='0%' y1='0%' x2='100%' y2='100%'>
+<stop offset='0%' stop-color='#5B6CFF' stop-opacity='0.85'/>
+<stop offset='70%' stop-color='#2ED3B7' stop-opacity='0.55'/>
+</linearGradient>
+<pattern id='dots-personal-trees-screen-2' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse'>
+<circle cx='2' cy='2' r='2' fill='rgba(255,255,255,0.35)' />
+</pattern>
+</defs>
+<rect width='1200' height='900' fill='url(#grad-personal-trees-screen-2)' rx='112' />
+<rect x='96.0' y='162.0' width='648.0' height='576.0' rx='32' fill='white' fill-opacity='0.08' stroke='rgba(255,255,255,0.25)' stroke-width='2'/>
+<rect x='528.0' y='288.0' width='480.0' height='378.0' rx='40' fill='url(#dots-personal-trees-screen-2)' opacity='0.4'/>
+<circle cx='960.0' cy='180.0' r='72.0' fill='rgba(255,255,255,0.35)' />
+<circle cx='240.0' cy='675.0' r='90.0' fill='rgba(17,19,24,0.15)' />
+</svg>

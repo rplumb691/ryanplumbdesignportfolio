@@ -1,0 +1,47 @@
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { href: "/#work", label: "Work" },
+  { href: "/about", label: "About" },
+];
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-bg/90 backdrop-blur-xl">
+      <div className="container flex flex-wrap items-center justify-between gap-4 py-4">
+        <Link href="/" className="font-display text-xl tracking-tight">
+          Ryan
+        </Link>
+        <nav className="flex items-center gap-6 text-sm font-medium text-ink/80">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <div className="flex flex-wrap items-center gap-3 text-sm">
+          <Link
+            href="/#contact"
+            className={cn(
+              "rounded-full border border-transparent bg-signal px-4 py-2 font-medium text-white shadow-sm transition",
+              "hover:-translate-y-0.5 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/70"
+            )}
+          >
+            Let’s talk
+          </Link>
+          <Link
+            href="mailto:hello@ryan.design"
+            className="text-ink/80 transition hover:text-ink"
+          >
+            hello@ryan.design
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
