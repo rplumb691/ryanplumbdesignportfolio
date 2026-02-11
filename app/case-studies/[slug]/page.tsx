@@ -41,48 +41,37 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   ];
 
   return (
-    <article id="top" className="bg-gradient-to-b from-surface via-surface to-bg">
-      <section className="border-b border-border/60 bg-surface py-20">
-        <div className="container max-w-4xl space-y-6">
+    <article id="top" className="bg-white">
+      <section className="py-16">
+        <div className="container space-y-6">
           <h1 className="font-display text-5xl leading-tight text-ink">{study.title}</h1>
           <p className="text-lg text-ink/80">{study.headline}</p>
         </div>
       </section>
 
-      <section className="bg-bg py-12">
-        <div className="container">
-          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-surface/60 p-4">
-            <Image
-              src={study.hero.image}
-              alt={study.hero.alt}
-              width={1600}
-              height={1200}
-              className="h-auto w-full rounded-2xl object-cover"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 opacity-50"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 10% 20%, rgb(var(--accent) / 0.2), transparent 50%)",
-              }}
-            />
-          </div>
+      <section>
+        <div className="relative w-full">
+          <Image
+            src={study.hero.image}
+            alt={study.hero.alt}
+            width={2400}
+            height={1350}
+            className="h-auto w-full object-cover"
+            priority
+          />
         </div>
       </section>
 
       <section className="container grid gap-12 py-20 lg:grid-cols-[220px_1fr]">
         <StickySubnav items={subnavItems} />
         <div className="space-y-16">
-          <div
-            id="overview"
-            className="rounded-3xl border border-border/70 bg-surface/80 p-10 shadow-[0_40px_120px_-80px_rgba(19,18,0,0.9)]"
-          >
+          <div id="overview" className="space-y-6">
             <SectionHeader kicker="Project overview" title="The work at a glance" subtitle={study.overview} />
           </div>
 
-          <div id="challenge" className="rounded-3xl border border-border/70 bg-bg p-10">
+          <div id="challenge" className="space-y-6">
             <SectionHeader kicker="The core challenge" title="What made this hard" />
-            <ul className="mt-6 space-y-3 text-lg text-ink">
+            <ul className="space-y-3 text-lg text-ink">
               {study.challenge.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span className="mt-2 block h-2 w-2 rounded-full bg-accent" />
@@ -92,11 +81,11 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </ul>
           </div>
 
-          <div id="approach" className="rounded-3xl border border-border/70 bg-surface/80 p-10">
+          <div id="approach" className="space-y-6">
             <SectionHeader kicker="The approach" title="How we moved" />
-            <p className="mt-6 text-lg text-ink">{study.approach}</p>
+            <p className="text-lg text-ink">{study.approach}</p>
             {study.callouts && (
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="grid gap-6 md:grid-cols-2">
                 {study.callouts.map((callout) => (
                   <CalloutCard key={callout.label} {...callout} />
                 ))}
@@ -104,9 +93,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             )}
           </div>
 
-          <div id="solution" className="rounded-3xl border border-border/70 bg-surface/80 p-10">
+          <div id="solution" className="space-y-6">
             <SectionHeader kicker="The solution" title="What shipped" />
-            <ul className="mt-6 space-y-4 text-lg">
+            <ul className="space-y-4 text-lg">
               {study.solution.map((item) => (
                 <li key={item} className="flex gap-4">
                   <span className="mt-2 h-1.5 w-10 rounded-full bg-accent2" />
@@ -114,16 +103,16 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </li>
               ))}
             </ul>
-            <div className="mt-10 grid gap-8 md:grid-cols-2">
+            <div className="grid gap-8 md:grid-cols-2">
               {study.gallery.map((image) => (
                 <ImageFrame key={image.src} src={image.src} alt={study.title} caption={image.caption} />
               ))}
             </div>
           </div>
 
-          <div id="outcomes" className="rounded-3xl border border-border/70 bg-bg p-10">
+          <div id="outcomes" className="space-y-6">
             <SectionHeader kicker="Outcomes" title="What changed" />
-            <ul className="mt-6 space-y-3 text-lg">
+            <ul className="space-y-3 text-lg">
               {study.outcomes.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 rounded-full bg-accent" />
@@ -133,14 +122,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </ul>
           </div>
 
-          <div id="why" className="rounded-3xl border border-border/70 bg-surface/80 p-10">
+          <div id="why" className="space-y-6">
             <SectionHeader kicker="Why this works" title="The principle" />
-            <p className="mt-6 text-lg text-ink">{study.why}</p>
+            <p className="text-lg text-ink">{study.why}</p>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-border/70 bg-surface py-16">
+      <section className="border-t border-border/70 bg-white py-16">
         <div className="container flex flex-col gap-6 text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-muted">More work</p>
           <div className="flex flex-col gap-4 md:flex-row md:justify-center">
