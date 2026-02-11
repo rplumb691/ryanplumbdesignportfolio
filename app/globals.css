@@ -14,9 +14,9 @@
   --grid-color: rgb(var(--ink) / 0.12);
   --dot-color: rgb(var(--ink) / 0.18);
   --paper-dot: rgb(var(--ink) / 0.08);
-  --hero-glow: radial-gradient(circle at 15% 0%, rgb(var(--accent) / 0.15), transparent 42%),
-    radial-gradient(circle at 70% 0%, rgb(var(--accent-2) / 0.12), transparent 45%),
-    radial-gradient(circle at 80% 85%, rgb(var(--accent) / 0.1), transparent 35%);
+  --hero-glow: radial-gradient(circle at 10% 40%, rgb(var(--accent) / 0.18), transparent 55%),
+    radial-gradient(circle at 70% 10%, rgb(var(--accent-2) / 0.12), transparent 55%),
+    radial-gradient(circle at 80% 85%, rgb(var(--accent) / 0.08), transparent 40%);
 }
 
 * {
@@ -71,20 +71,7 @@ section {
 }
 
 .paper-dots {
-  position: relative;
   background-color: rgb(var(--bg));
-  background-image: linear-gradient(135deg, rgb(var(--accent) / 0.08), transparent 55%),
-    linear-gradient(315deg, rgb(var(--accent-2) / 0.06), transparent 50%);
-  overflow: hidden;
-}
-
-.paper-dots::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgb(var(--surface) / 0.6), transparent 45%);
-  opacity: 0.4;
-  pointer-events: none;
 }
 
 .halftone::after {
@@ -122,8 +109,7 @@ section {
 .hero-atmosphere::before {
   content: "";
   position: absolute;
-  inset: -60px -40px auto;
-  height: 500px;
+  inset: -160px -160px -160px;
   background-image: var(--hero-glow);
   z-index: 0;
   pointer-events: none;

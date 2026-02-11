@@ -1,4 +1,8 @@
+'use client';
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -7,8 +11,22 @@ const navItems = [
 ];
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 32);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const headerClasses = cn(
+    "sticky top-0 z-40 border-b backdrop-blur-xl transition-colors duration-300",
+    scrolled ? "border-border/60 bg-bg/90" : "border-transparent bg-transparent"
+  );
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-bg/90 backdrop-blur-xl">
+    <header className={headerClasses}>
       <div className="container flex flex-wrap items-center justify-between gap-4 py-4">
         <Link href="/" className="font-display text-xl tracking-tight">
           Ryan

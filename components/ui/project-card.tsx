@@ -42,9 +42,7 @@ export function ProjectCard({ slug, title, headline, tags, image }: ProjectCardP
             <ArrowUpRight size={20} />
           </div>
         </div>
-        <p className="mt-auto text-sm uppercase tracking-[0.2em] text-muted">
-          {tags.join(" · ")}
-        </p>
+        <div className="mt-auto h-px w-full bg-border" />
       </div>
     </Link>
   );

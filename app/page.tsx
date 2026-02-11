@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { ButtonLink } from "@/components/ui/button";
 import { Divider } from "@/components/ui/divider";
 import { ProjectCard } from "@/components/ui/project-card";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -10,40 +9,26 @@ import { workGrid } from "@/data/case-studies";
 export default function HomePage() {
   return (
     <>
-      <section className="hero-atmosphere paper-dots relative overflow-hidden border-b border-border/70">
-        <div className="container relative z-10 py-20 md:py-28">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="space-y-4 text-xs uppercase tracking-[0.24em] text-ink/70 md:text-sm">
-              <p className="inline-flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                Product Designer
-              </p>
-              <p>Based in Utah</p>
-            </div>
-
-            <div className="float-in space-y-7">
-              <p className="text-lg text-ink/80">Hi, I&apos;m Ryan</p>
+      <section className="hero-atmosphere relative overflow-hidden border-b border-border/70">
+        <div className="container relative z-10 py-24 md:py-32">
+          <div className="max-w-3xl space-y-6">
+            <div className="float-in space-y-6">
+              <p className="text-lg text-ink/80">Hey, I&apos;m Ryan</p>
               <h1 className="max-w-4xl font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-                I design experiences
-                <span className="block">with logic &amp; <span className="script-accent text-accent">purpose</span></span>
+                I build <span className="script-accent text-accent">clarity</span> into complex products.
               </h1>
-              <p className="max-w-2xl text-lg text-ink/80 md:text-xl">
-                I create usable products that grow businesses through clearer journeys, stronger systems, and confident product storytelling.
+              <p className="max-w-2xl text-lg text-ink md:text-xl">
+                Product design leader scaling high-trust ecommerce, subscription, and systems work for growth-stage teams.
               </p>
-              <div className="flex flex-wrap items-center gap-4">
-                <ButtonLink href="/#work" className="min-w-40">
-                  View work
-                </ButtonLink>
-                <ButtonLink href="/about" variant="secondary" className="min-w-28">
-                  About
-                </ButtonLink>
-              </div>
+              <p className="text-sm text-ink/70">
+                Currently partnering with SaaS and commerce orgs on adoption journeys, product storytelling, and design systems.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" className="paper-dots py-20">
+      <section id="work" className="py-20">
         <div className="container">
           <SectionHeader
             kicker="Selected work"
@@ -62,8 +47,8 @@ export default function HomePage() {
         <Divider />
       </div>
 
-      <section className="bg-surface py-20">
-        <div className="container grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-start">
+      <section className="py-20">
+        <div className="container grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="space-y-6">
             <SectionHeader
               kicker={shortAbout.kicker}
@@ -78,16 +63,14 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="halftone-corner relative rounded-[28px] border border-border/80 bg-gradient-to-br from-accent/8 via-surface to-accent2/8 p-8 shadow-[0_30px_80px_-60px_rgba(19,18,0,0.8)]">
-            <p className="text-xs uppercase tracking-[0.24em] text-ink/70">Focus areas</p>
-            <ul className="mt-4 space-y-3 text-lg">
-              {shortAbout.focus.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="rounded-[28px] border border-border/80 bg-surface p-8 shadow-[0_30px_80px_-60px_rgba(19,18,0,0.8)]">
+            <p className="text-xs uppercase tracking-[0.24em] text-ink/70">How I work</p>
+            <p className="mt-4 text-lg text-ink">
+              Grounded discovery, confident storytelling, and hands-on systems building. I connect messy product problems to clear narratives teams can rally behind.
+            </p>
+            <p className="mt-3 text-sm text-ink/70">
+              From first insight to shipped experience, I guide cross-functional teams through workshops, prototypes, and playbooks that keep everyone aligned.
+            </p>
           </div>
         </div>
       </section>

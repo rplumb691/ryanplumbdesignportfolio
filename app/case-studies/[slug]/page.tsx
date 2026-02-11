@@ -43,33 +43,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   return (
     <article id="top" className="bg-gradient-to-b from-surface via-surface to-bg">
       <section className="border-b border-border/60 bg-surface py-20">
-        <div className="container grid gap-10 lg:grid-cols-[1fr_320px]">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-ink/70">Case study</p>
-            <h1 className="font-display text-5xl leading-tight text-ink">{study.title}</h1>
-            <p className="text-lg text-ink/80">{study.headline}</p>
-          </div>
-          <div className="rounded-3xl border border-border/70 bg-surface/80 p-6 shadow-[0_30px_120px_-80px_rgba(19,18,0,0.85)]">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted">What I did</p>
-            <dl className="mt-4 space-y-3 text-sm">
-              <div className="flex justify-between gap-4 border-b border-border/50 pb-2">
-                <dt className="text-muted">Role</dt>
-                <dd className="font-medium text-ink">{study.details.role}</dd>
-              </div>
-              <div className="flex justify-between gap-4 border-b border-border/50 pb-2">
-                <dt className="text-muted">Team</dt>
-                <dd className="font-medium text-ink">{study.details.team}</dd>
-              </div>
-              <div className="flex justify-between gap-4 border-b border-border/50 pb-2">
-                <dt className="text-muted">Timeline</dt>
-                <dd className="font-medium text-ink">{study.details.timeline}</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-muted">Platforms</dt>
-                <dd className="font-medium text-ink">{study.details.platforms}</dd>
-              </div>
-            </dl>
-          </div>
+        <div className="container max-w-4xl space-y-6">
+          <h1 className="font-display text-5xl leading-tight text-ink">{study.title}</h1>
+          <p className="text-lg text-ink/80">{study.headline}</p>
         </div>
       </section>
 
