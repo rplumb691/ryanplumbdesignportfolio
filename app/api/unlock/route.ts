@@ -13,7 +13,9 @@ export async function POST(request: Request) {
     typeof redirectTo === "string" && redirectTo.startsWith("/") ? redirectTo : "/";
 
   if (typeof password === "string" && password === PASSWORD) {
-    const response = NextResponse.redirect(new URL(safeRedirect || "/", request.url));
+    const response = NextResponse.redirect(new URL(safeRedirect || "/", request.url), {
+      status: 303,
+    });
     response.cookies.set({
       name: COOKIE_NAME,
       value: "true",
@@ -30,5 +32,5 @@ export async function POST(request: Request) {
   if (safeRedirect && safeRedirect !== "/") {
     errorUrl.searchParams.set("redirectTo", safeRedirect);
   }
-  return NextResponse.redirect(errorUrl);
+  return NextResponse.redirect(errorUrl, { status: 303 });
 }
