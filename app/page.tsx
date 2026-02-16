@@ -16,8 +16,8 @@ export default function HomePage() {
             className="object-cover"
           />
         </div>
-        <div className="container relative min-h-[320px] md:min-h-[460px]">
-          <div className="grid min-h-[320px] gap-8 md:min-h-[460px] md:grid-cols-[0.92fr_1.08fr] md:items-center md:gap-14">
+        <div className="container relative h-[320px] md:h-[460px]">
+          <div className="grid h-full gap-8 md:grid-cols-[0.92fr_1.08fr] md:items-end md:gap-14">
             <div className="relative flex h-full items-end md:self-end">
               <Image
                 src="/placeholders/RyanPlumb.png"
@@ -25,10 +25,10 @@ export default function HomePage() {
                 width={1466}
                 height={1360}
                 priority
-                className="h-[285px] w-auto object-contain object-left-bottom md:h-[468px] md:translate-y-[10px]"
+                className="h-[315px] w-auto object-contain object-left-bottom md:h-[525px]"
               />
             </div>
-            <div className="pb-10 md:self-center md:pb-0">
+            <div className="pb-10 md:pb-14">
               <h1 className="font-display text-5xl leading-none text-ink md:text-[74px]">Ryan Plumb</h1>
               <p className="mt-4 max-w-[500px] text-base leading-[1.3] text-[#5d5965] md:text-[16px]">
                 Solving complex problems through thoughtful design to create meaningful experiences.
@@ -38,7 +38,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="work" className="bg-bg py-20 md:py-28">
+      <section id="work" className="bg-white py-20 md:py-28">
         <div className="container">
           <div className="max-w-[620px]">
             <h2 className="text-5xl font-semibold leading-none text-ink md:text-[56px]">Design Work</h2>
@@ -60,7 +60,7 @@ export default function HomePage() {
             <p className="font-display text-4xl leading-none text-ink md:text-[56px]">Let&apos;s connect</p>
             <a
               href="mailto:ryanplumbdesign@gmail.com"
-              className="mt-4 inline-block text-lg leading-[1.3] text-ink hover:underline md:text-[29px]"
+              className="mt-4 inline-block text-[20px] leading-[1.3] text-ink hover:underline"
             >
               ryanplumbdesign@gmail.com
             </a>
