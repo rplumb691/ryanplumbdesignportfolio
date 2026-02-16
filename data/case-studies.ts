@@ -235,10 +235,21 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
+const workSummaries: Record<string, string> = {
+  "personal-trees":
+    "A core experience within a large, complex platform, improving usability and expanding how users interact with personal family data.",
+  ezflate: "A scalable ecommerce experience focused on performance and conversion across devices.",
+  "scrubbin-pup":
+    "A cohesive brand and service experience that simplified customer interaction and clarified the overall offering.",
+  "portrait-tree-view":
+    "A new way to navigate complex genealogical structures, improving clarity and exploration across large datasets.",
+};
+
 export const workGrid = caseStudies.map(({ slug, title, headline, tags, hero }) => ({
   slug,
   title,
   headline,
   tags,
   image: hero.image,
+  summary: workSummaries[slug] ?? headline,
 }));

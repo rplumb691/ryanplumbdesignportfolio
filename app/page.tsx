@@ -1,41 +1,55 @@
-import Link from "next/link";
+import Image from "next/image";
 
-import { Divider } from "@/components/ui/divider";
 import { ProjectCard } from "@/components/ui/project-card";
-import { SectionHeader } from "@/components/ui/section-header";
-import { shortAbout } from "@/data/profile";
 import { workGrid } from "@/data/case-studies";
 
 export default function HomePage() {
   return (
     <>
-      <section className="hero-atmosphere relative overflow-hidden border-b border-border/70">
-        <div className="container relative z-10 py-24 md:py-32">
-          <div className="max-w-3xl space-y-6">
-            <div className="float-in space-y-6">
-              <p className="text-lg text-ink/80">Hey, I&apos;m Ryan</p>
-              <h1 className="max-w-4xl font-display text-5xl leading-[0.98] text-ink md:text-7xl">
-                I build <span className="script-accent text-accent">clarity</span> into complex products.
-              </h1>
-              <p className="max-w-2xl text-lg text-ink md:text-xl">
-                Product design leader scaling high-trust ecommerce, subscription, and systems work for growth-stage teams.
-              </p>
-              <p className="text-sm text-ink/70">
-                Currently partnering with SaaS and commerce orgs on adoption journeys, product storytelling, and design systems.
-              </p>
+      <section className="relative overflow-hidden border-b border-border/50 bg-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/placeholders/GradientColor.png"
+            alt="Gradient backdrop"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+        <div className="container relative flex flex-col gap-12 py-16 md:flex-row md:items-end md:justify-between lg:py-24">
+          <div className="max-w-2xl space-y-6 text-ink">
+            <p className="text-lg text-ink/80">Product Design Leader</p>
+            <h1 className="font-display text-5xl leading-[1.05] text-ink md:text-7xl">Ryan Plumb</h1>
+            <p className="text-xl text-ink/80">
+              Solving complex problems through thoughtful design to create meaningful experiences.
+            </p>
+          </div>
+          <div className="relative flex w-full items-end justify-center md:max-w-md">
+            <div className="relative aspect-[4/5] w-full max-w-sm">
+              <Image
+                src="/placeholders/RyanPlumb.png"
+                alt="Ryan Plumb"
+                fill
+                priority
+                className="object-contain drop-shadow-[0_40px_80px_rgba(19,18,0,0.35)]"
+                sizes="(max-width: 768px) 80vw, 420px"
+              />
             </div>
           </div>
         </div>
       </section>
 
       <section id="work" className="py-20">
-        <div className="container">
-          <SectionHeader
-            kicker="Selected work"
-            title="Recent case studies"
-            subtitle="Four projects focused on adoption, trust, conversion, and interaction clarity."
-          />
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
+        <div className="container space-y-8">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/60">Design Work</p>
+            <h2 className="font-display text-4xl text-ink">Selected projects</h2>
+            <p className="max-w-3xl text-lg text-ink/80">
+              Selected work focused on complex systems, product thinking, and real-world impact. Strategy, craft, and execution come
+              together to shape products people use every day.
+            </p>
+          </div>
+          <div className="grid gap-12 md:grid-cols-2">
             {workGrid.map((work) => (
               <ProjectCard key={work.slug} {...work} />
             ))}
@@ -43,59 +57,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="container">
-        <Divider />
-      </div>
-
-      <section className="py-20">
-        <div className="container grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div className="space-y-6">
-            <SectionHeader
-              kicker={shortAbout.kicker}
-              title="Know me better"
-              subtitle={shortAbout.body}
-            />
-            <p className="text-lg text-muted">
-              I partner with product, research, and engineering to turn complex requirements into clean, usable experiences.
-            </p>
-            <Link href="/about" className="inline-flex items-center text-sm font-semibold text-accent">
-              Read about Ryan &rarr;
-            </Link>
-          </div>
-
-          <div className="rounded-[28px] border border-border/80 bg-surface p-8 shadow-[0_30px_80px_-60px_rgba(19,18,0,0.8)]">
-            <p className="text-xs uppercase tracking-[0.24em] text-ink/70">How I work</p>
-            <p className="mt-4 text-lg text-ink">
-              Grounded discovery, confident storytelling, and hands-on systems building. I connect messy product problems to clear narratives teams can rally behind.
-            </p>
-            <p className="mt-3 text-sm text-ink/70">
-              From first insight to shipped experience, I guide cross-functional teams through workshops, prototypes, and playbooks that keep everyone aligned.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="paper-dots py-20">
+      <section id="contact" className="bg-[#dfdfdf] py-16">
         <div className="container">
-          <div className="halftone-corner relative grid gap-8 overflow-hidden rounded-[30px] border border-border/80 bg-surface p-10 shadow-[0_40px_120px_-85px_rgba(19,18,0,0.9)] md:grid-cols-2">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent2 to-accent" />
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-ink/70">Let&apos;s talk</p>
-              <h2 className="mt-4 font-display text-4xl leading-tight text-ink">Open to product roles and select freelance.</h2>
-              <p className="mt-4 text-lg text-muted">
-                If you&apos;re building a meaningful product and want stronger UX direction, let&apos;s connect.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
+          <div className="rounded-[34px] border border-border/60 bg-white/90 px-10 py-12 shadow-[0_30px_70px_-55px_rgba(19,18,0,0.85)]">
+            <div className="h-px w-full bg-border" />
+            <div className="mt-10 space-y-4">
+              <p className="font-display text-3xl text-ink">Let&apos;s connect</p>
               <a
-                href="mailto:hello@ryan.design"
-                className="inline-flex items-center justify-center rounded-full bg-signal px-6 py-4 text-lg font-semibold text-white shadow-[0_25px_50px_-32px_rgba(19,18,0,0.8)]"
+                href="mailto:ryanplumbdesign@gmail.com"
+                className="text-lg font-medium text-ink hover:underline"
               >
-                hello@ryan.design
+                ryanplumbdesign@gmail.com
               </a>
-              <p className="text-sm text-muted">
-                Share role, timeline, and context. I typically reply within two business days.
-              </p>
             </div>
           </div>
         </div>
