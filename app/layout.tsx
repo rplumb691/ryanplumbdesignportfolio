@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { archivo, clashDisplay } from "@/lib/fonts";
 
 export const metadata: Metadata = {
@@ -25,11 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${archivo.variable} ${clashDisplay.variable} bg-bg text-ink antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );

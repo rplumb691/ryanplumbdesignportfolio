@@ -16,7 +16,7 @@ export default function HomePage() {
             className="object-cover"
           />
         </div>
-        <div className="container relative min-h-[320px] pt-12 md:min-h-[460px] md:pt-0">
+        <div className="container relative min-h-[320px] md:min-h-[460px]">
           <div className="grid min-h-[320px] gap-8 md:min-h-[460px] md:grid-cols-[0.92fr_1.08fr] md:items-center md:gap-14">
             <div className="relative flex h-full items-end md:self-end">
               <Image
@@ -25,11 +25,11 @@ export default function HomePage() {
                 width={1466}
                 height={1360}
                 priority
-                className="h-[260px] w-auto object-contain object-left-bottom md:h-[405px]"
+                className="h-[285px] w-auto object-contain object-left-bottom md:h-[468px] md:translate-y-[10px]"
               />
             </div>
-            <div className="pb-10 md:pb-0 md:self-center">
-              <h1 className="font-display text-5xl leading-none text-ink md:text-[76px]">Ryan Plumb</h1>
+            <div className="pb-10 md:self-center md:pb-0">
+              <h1 className="font-display text-5xl leading-none text-ink md:text-[74px]">Ryan Plumb</h1>
               <p className="mt-4 max-w-[500px] text-base leading-[1.3] text-[#5d5965] md:text-[16px]">
                 Solving complex problems through thoughtful design to create meaningful experiences.
               </p>
