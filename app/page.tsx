@@ -16,20 +16,20 @@ export default function HomePage() {
             className="object-cover"
           />
         </div>
-        <div className="container relative h-[320px] md:h-[460px]">
+        <div className="container relative h-[330px] md:h-[460px]">
           <div className="grid h-full gap-8 md:grid-cols-[0.92fr_1.08fr] md:items-end md:gap-14">
-            <div className="relative flex h-full items-end md:self-end">
+            <div className="relative h-full">
               <Image
                 src="/placeholders/RyanPlumb.png"
                 alt="Ryan Plumb"
                 width={1466}
                 height={1360}
                 priority
-                className="h-[315px] w-auto object-contain object-left-bottom md:h-[525px]"
+                className="absolute bottom-0 left-0 h-[315px] w-auto max-w-none object-contain md:h-[540px]"
               />
             </div>
-            <div className="pb-10 md:pb-14">
-              <h1 className="font-display text-5xl leading-none text-ink md:text-[74px]">Ryan Plumb</h1>
+            <div className="self-end pb-8 md:pb-12">
+              <h1 className="font-display text-5xl leading-none text-ink md:text-[72px]">Ryan Plumb</h1>
               <p className="mt-4 max-w-[500px] text-base leading-[1.3] text-[#5d5965] md:text-[16px]">
                 Solving complex problems through thoughtful design to create meaningful experiences.
               </p>
@@ -54,7 +54,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#d2d2d4] py-16 md:py-20">
+      <section id="contact" className="bg-[#e3e3e3] py-16 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-[1024px] border-t border-[#818181] pt-9">
             <p className="font-display text-4xl leading-none text-ink md:text-[56px]">Let&apos;s connect</p>
