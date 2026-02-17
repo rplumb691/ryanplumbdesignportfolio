@@ -25,12 +25,9 @@ export function ProjectCard({ slug, title, image, summary }: ProjectCardProps) {
         </div>
       </div>
       <div className="space-y-2 text-ink">
-        <p className="text-base font-semibold leading-tight text-ink md:text-[17px]">{homeTitle}</p>
-        {summary ? <p className="text-sm leading-[1.33] text-ink/88 md:text-[16px]">{summary}</p> : null}
-        <span className="inline-flex items-center text-sm leading-none text-[#2d8abd] md:text-[15px]">
-          See Work
-          <span className="ml-1">→</span>
-        </span>
+        <p className="text-[16px] font-semibold leading-[1.2] text-ink">{homeTitle}</p>
+        {summary ? <p className="text-[16px] leading-[1.28] text-ink/88">{summary}</p> : null}
+        <span className="inline-flex items-center text-[16px] leading-none text-[#066f90]">See Work</span>
       </div>
     </Link>
   );
