@@ -44,7 +44,9 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: -0.025em;
+  letter-spacing: -0.04em !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
 }
 
 /* Force hero portrait image to bottom of first section (home) */

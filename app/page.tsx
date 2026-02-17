@@ -71,7 +71,7 @@ export default function HomePage() {
       <section id="contact" className="bg-[#ebebeb] py-24">
         <div className="mx-auto max-w-[1240px] px-6">
           <div className="mx-auto max-w-[1126px] border-t border-[#8a8a8a] pt-8">
-            <p className="font-display text-[56px] leading-[1] tracking-[-0.02em] text-ink max-[980px]:text-4xl">Let&apos;s connect</p>
+            <h2 className="font-display text-[56px] leading-[1] tracking-[-0.02em] text-ink max-[980px]:text-4xl">Let&apos;s connect</h2>
             <a
               href="mailto:ryanplumbdesign@gmail.com"
               className="mt-4 inline-block text-[20px] leading-[1.3] text-ink hover:underline"
