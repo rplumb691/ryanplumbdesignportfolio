@@ -30,10 +30,6 @@ body {
   min-height: 100vh;
 }
 
-body.unlock-mode {
-  overflow: hidden;
-}
-
 section {
   scroll-margin-top: 120px;
 }
@@ -162,51 +158,4 @@ main > section:first-of-type {
   section {
     scroll-margin-top: 80px;
   }
-}
-@keyframes kenburns-forward {
-  0% {
-    transform: scale(1) translate3d(-2%, -2%, 0);
-  }
-  100% {
-    transform: scale(1.18) translate3d(4%, 5%, 0);
-  }
-}
-
-@keyframes kenburns-reverse {
-  0% {
-    transform: scale(1.18) translate3d(4%, 5%, 0);
-  }
-  100% {
-    transform: scale(1) translate3d(-2%, -2%, 0);
-  }
-}
-
-@keyframes kenburns-pan {
-  0% {
-    transform: scale(1.1) translate3d(-5%, -3%, 0);
-  }
-  100% {
-    transform: scale(1.1) translate3d(5%, 3%, 0);
-  }
-}
-
-.kenburns-forward,
-.kenburns-reverse,
-.kenburns-pan {
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-}
-
-.kenburns-forward {
-  animation-name: kenburns-forward;
-}
-
-.kenburns-reverse {
-  animation-name: kenburns-reverse;
-}
-
-.kenburns-pan {
-  animation-name: kenburns-pan;
 }

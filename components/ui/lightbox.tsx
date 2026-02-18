@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 export interface LightboxImage {
@@ -22,7 +23,7 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
   const [dragging, setDragging] = useState(false);
   const dragStart = useRef({ x: 0, y: 0 });
   const panStart = useRef({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
+  const imageAreaRef = useRef<HTMLDivElement>(null);
   const lastTouchDist = useRef<number | null>(null);
 
   useEffect(() => {
@@ -134,7 +135,7 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
 
   const handleBackdropClick = useCallback(
     (e: React.MouseEvent) => {
-      if (e.target === containerRef.current) {
+      if (e.target === imageAreaRef.current) {
         if (zoom > 1) {
           resetView();
         } else {
@@ -149,14 +150,10 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
 
   const current = images[index];
 
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
-      onClick={handleBackdropClick}
-      ref={containerRef}
-    >
-      {/* Top bar */}
-      <div className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between px-5 py-4">
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] bg-black">
+      {/* Top bar — highest layer */}
+      <div className="absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-5 py-4">
         <span className="text-sm text-white/60">
           {index + 1} / {images.length}
         </span>
@@ -171,12 +168,12 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
         </button>
       </div>
 
-      {/* Prev / Next */}
+      {/* Prev / Next — above image area */}
       {images.length > 1 && (
         <>
           <button
-            onClick={prev}
-            className="absolute left-3 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white max-sm:left-1 max-sm:h-10 max-sm:w-10"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-3 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white max-sm:left-1 max-sm:h-10 max-sm:w-10"
             aria-label="Previous image"
           >
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -184,8 +181,8 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
             </svg>
           </button>
           <button
-            onClick={next}
-            className="absolute right-3 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white max-sm:right-1 max-sm:h-10 max-sm:w-10"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-3 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white max-sm:right-1 max-sm:h-10 max-sm:w-10"
             aria-label="Next image"
           >
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -195,13 +192,15 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
         </>
       )}
 
-      {/* Image */}
+      {/* Image area — below controls */}
       <div
-        className="flex h-full w-full items-center justify-center overflow-hidden"
+        ref={imageAreaRef}
+        className="absolute inset-0 z-10 flex items-center justify-center overflow-hidden"
         style={{
           cursor: zoom > 1 ? (dragging ? "grabbing" : "grab") : "zoom-in",
           touchAction: "none",
         }}
+        onClick={handleBackdropClick}
         onWheel={handleWheel}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -218,6 +217,7 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
           }}
         >
           <Image
+            key={current.src}
             src={current.src}
             alt={current.alt}
             width={2400}
@@ -229,6 +229,7 @@ export function Lightbox({ images, initialIndex = 0, open, onClose }: LightboxPr
           />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
