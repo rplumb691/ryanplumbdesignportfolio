@@ -10,9 +10,9 @@ const baseStyles =
 
 const variantMap: Record<ButtonVariant, string> = {
   primary:
-    "bg-signal text-white shadow-[0_18px_45px_-24px_rgba(19,18,0,0.65)] hover:-translate-y-0.5 hover:bg-signal/90",
+    "bg-signal text-white hover:bg-signal/90",
   secondary:
-    "bg-surface text-ink border border-border hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-card",
+    "bg-surface text-ink border border-border hover:border-accent/40",
   ghost: "bg-transparent text-ink hover:text-accent",
 };
 

@@ -36,7 +36,7 @@ export function StickySubnav({ items }: StickySubnavProps) {
 
   return (
     <aside className="hidden lg:block">
-      <div className="sticky top-28 rounded-2xl border border-border/70 bg-surface/80 p-4 text-sm shadow-[0_30px_90px_-70px_rgba(19,18,0,0.6)]">
+      <div className="sticky top-28 rounded-2xl border border-border/70 bg-surface/80 p-4 text-sm">
         <p className="text-xs uppercase tracking-[0.2em] text-muted">Navigate</p>
         <div className="mt-3 space-y-2">
           {items.map((item) => (
