@@ -26,13 +26,15 @@ export default function HomePage() {
           />
         </div>
         {/* Mobile text — completely separate from the desktop grid */}
-        <div className="relative z-10 hidden px-6 pt-16 max-[900px]:block">
-          <h1 className="font-display text-[clamp(44px,12vw,64px)] font-semibold leading-[0.95] tracking-[-0.02em] text-ink">
-            Ryan Plumb
-          </h1>
-          <p className="mt-3 max-w-[420px] text-[16px] leading-[1.24] tracking-[-0.01em] text-[#5d5965]">
-            Solving complex problems through thoughtful design to create meaningful experiences.
-          </p>
+        <div className="relative z-10 hidden max-[900px]:block">
+          <div className="bg-gradient-to-b from-white via-white/95 to-transparent px-6 pb-12 pt-16">
+            <h1 className="font-display text-[clamp(44px,12vw,64px)] font-semibold leading-[0.95] tracking-[-0.02em] text-ink">
+              Ryan Plumb
+            </h1>
+            <p className="mt-3 max-w-[420px] text-[16px] leading-[1.24] tracking-[-0.01em] text-[#3d3a42]">
+              Solving complex problems through thoughtful design to create meaningful experiences.
+            </p>
+          </div>
         </div>
         {/* Desktop grid — hidden entirely on mobile */}
         <div className="relative mx-auto grid h-full max-w-[1440px] grid-cols-[640px_1fr] max-[1150px]:grid-cols-[560px_1fr] max-[900px]:hidden">
@@ -42,7 +44,7 @@ export default function HomePage() {
               <h1 className="font-display text-[84px] font-semibold leading-[0.95] tracking-[-0.02em] text-ink max-[1200px]:text-[72px]">
                 Ryan Plumb
               </h1>
-              <p className="mt-8 max-w-[560px] text-[20px] leading-[1.22] tracking-[-0.01em] text-[#5d5965] max-[1200px]:text-[18px]">
+              <p className="mt-8 max-w-[560px] text-[20px] leading-[1.22] tracking-[-0.01em] text-[#3d3a42] max-[1200px]:text-[18px]">
                 Solving complex problems through thoughtful design to create meaningful experiences.
               </p>
             </div>

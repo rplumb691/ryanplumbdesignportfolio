@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 import { archivo, clashDisplay } from "@/lib/fonts";
+import { Navbar } from "@/components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "Ryan — Product Designer",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${archivo.variable} ${clashDisplay.variable} bg-bg text-ink antialiased`}
       >
+        <Navbar />
         <main className="min-h-screen">{children}</main>
       </body>
     </html>

@@ -154,9 +154,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <h2 className="mt-2 font-display text-[clamp(24px,4vw,36px)] leading-[1.15] text-ink">
               {sec.overview.title}
             </h2>
-            <p className="mt-6 text-[18px] leading-[1.7] text-ink/80">{study.overview}</p>
+            <p className="mt-6 text-[18px] leading-[1.7] text-ink/90">{study.overview}</p>
             {study.overviewBody?.map((p) => (
-              <p key={p.slice(0, 40)} className="mt-4 text-[18px] leading-[1.7] text-ink/80">{p}</p>
+              <p key={p.slice(0, 40)} className="mt-4 text-[18px] leading-[1.7] text-ink/90">{p}</p>
             ))}
           </section>
           <SectionImages study={study} section="overview" allImages={allImages} />
@@ -169,13 +169,13 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </h2>
             <div className="mt-6">
               {study.challengeFormat === "narrative" ? (
-                <div className="space-y-4 text-[18px] leading-[1.7] text-ink/80">
+                <div className="space-y-4 text-[18px] leading-[1.7] text-ink/90">
                   {study.challenge.map((p) => (
                     <p key={p.slice(0, 40)}>{p}</p>
                   ))}
                 </div>
               ) : (
-                <ul className="space-y-3 text-[18px] leading-[1.7] text-ink/80">
+                <ul className="space-y-3 text-[18px] leading-[1.7] text-ink/90">
                   {study.challenge.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="mt-[10px] block h-[6px] w-[6px] shrink-0 rounded-full bg-muted" />
@@ -194,12 +194,12 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <h2 className="mt-2 font-display text-[clamp(24px,4vw,36px)] leading-[1.15] text-ink">
               {sec.approach.title}
             </h2>
-            <p className="mt-6 text-[18px] leading-[1.7] text-ink/80">{study.approach}</p>
+            <p className="mt-6 text-[18px] leading-[1.7] text-ink/90">{study.approach}</p>
             {study.approachBody?.map((p) => (
-              <p key={p.slice(0, 40)} className="mt-4 text-[18px] leading-[1.7] text-ink/80">{p}</p>
+              <p key={p.slice(0, 40)} className="mt-4 text-[18px] leading-[1.7] text-ink/90">{p}</p>
             ))}
             {study.approachItems && (
-              <ul className="mt-6 space-y-3 text-[18px] leading-[1.7] text-ink/80">
+              <ul className="mt-6 space-y-3 text-[18px] leading-[1.7] text-ink/90">
                 {study.approachItems.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-[10px] block h-[6px] w-[6px] shrink-0 rounded-full bg-muted" />
@@ -226,7 +226,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </h2>
             <div className="mt-6">
               {study.solutionFormat === "narrative" ? (
-                <div className="space-y-4 text-[18px] leading-[1.7] text-ink/80">
+                <div className="space-y-4 text-[18px] leading-[1.7] text-ink/90">
                   {study.solution.map((p) => (
                     <p key={p.slice(0, 40)}>{p}</p>
                   ))}
@@ -268,7 +268,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <h2 className="mt-2 font-display text-[clamp(24px,4vw,36px)] leading-[1.15] text-ink">
               {sec.why.title}
             </h2>
-            <p className="mt-6 text-[18px] leading-[1.7] text-ink/80">{study.why}</p>
+            <p className="mt-6 text-[18px] leading-[1.7] text-ink/90">{study.why}</p>
           </section>
           <SectionImages study={study} section="why" allImages={allImages} />
         </div>
